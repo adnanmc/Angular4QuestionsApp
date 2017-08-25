@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Input } from "@angular/core";
 import { Question } from "../../models/question";
 
@@ -12,9 +12,15 @@ export class QuestionComponent implements OnInit {
   @Input('question') 
   question:Question;
 
+  @Output('removedQuestion') removedQuestion = new EventEmitter<Question>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  removeQuestion(question:Question){
+    this.removedQuestion.emit(question);
   }
 
 }

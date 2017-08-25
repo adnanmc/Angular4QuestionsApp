@@ -20,4 +20,12 @@ export class QuestionListComponent implements OnInit {
 
   }
 
+  addQuestion(question:Question){
+    this.dataService.addQuestion(question);
+  }
+
+  removeQuestion(question:Question){
+    this.dataService.removeQuestion(question);
+  }
+
 }
