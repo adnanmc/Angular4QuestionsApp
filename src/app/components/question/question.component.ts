@@ -10,7 +10,7 @@ import { Question } from '../../models/question';
 export class QuestionComponent implements OnInit {
 
   @Input('question')
-  question:Question;
+  question: Question;
 
   @Output('removedQuestion') removedQuestion = new EventEmitter<Question>();
 
@@ -19,7 +19,7 @@ export class QuestionComponent implements OnInit {
   ngOnInit() {
   }
 
-  removeQuestion(question:Question){
+  removeQuestion(question: Question) {
     this.removedQuestion.emit(question);
   }
 

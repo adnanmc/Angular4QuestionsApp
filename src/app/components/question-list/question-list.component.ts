@@ -11,7 +11,7 @@ export class QuestionListComponent implements OnInit {
 
   questions: Question[];
 
-  constructor(public dataService:DataService) {
+  constructor(public dataService: DataService) {
 
   }
 
@@ -20,11 +20,11 @@ export class QuestionListComponent implements OnInit {
 
   }
 
-  addQuestion(question:Question){
+  addQuestion(question: Question) {
     this.dataService.addQuestion(question);
   }
 
-  removeQuestion(question:Question){
+  removeQuestion(question: Question) {
     this.dataService.removeQuestion(question);
   }
 
