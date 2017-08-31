@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Input } from "@angular/core";
-import { Question } from "../../models/question";
+import { Input } from '@angular/core';
+import { Question } from '../../models/question';
 
 @Component({
   selector: 'app-question',
@@ -9,7 +9,7 @@ import { Question } from "../../models/question";
 })
 export class QuestionComponent implements OnInit {
 
-  @Input('question') 
+  @Input('question')
   question:Question;
 
   @Output('removedQuestion') removedQuestion = new EventEmitter<Question>();

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Question } from "../models/question";
+import { Question } from '../models/question';
 
 @Injectable()
 export class DataService {
   questions: Question[];
-  constructor() { 
+  constructor() {
     // this.questions = [
     //   {
     //     text: 'What is your name?',
@@ -25,7 +25,7 @@ export class DataService {
   }
 
   // get questions from locall storage
-  getQuestions(){
+  getQuestions() {
     if (localStorage.getItem('questions') === null) {
       this.questions = [];
     } else {
@@ -35,36 +35,36 @@ export class DataService {
   }
 
   // add qustion to local storage
-  addQuestion(question:Question){
+  addQuestion(question: Question) {
     this.questions.unshift(question);
 
     let questions;
 
     if (localStorage.getItem('questions') === null) {
       questions = [];
-      //push new question
+      // push new question
       questions.unshift(question);
-      //set new array to localstorage
+      // set new array to localstorage
       localStorage.setItem('questions', JSON.stringify(questions));
     } else {
       questions = JSON.parse(localStorage.getItem('questions'));
       // add new question
       questions.unshift(question);
-      //re set local storage
+      // re set local storage
       localStorage.setItem('questions', JSON.stringify(questions));
     }
 
   }
 
-  //remove individual question from local storage
-  removeQuestion(question:Question){
+  // remove individual question from local storage
+  removeQuestion(question: Question) {
     for (let index = 0; index < this.questions.length; index++) {
-      if (question == this.questions[index]) {
-        this.questions.splice(index,1);
+      if (question === this.questions[index]) {
+        this.questions.splice(index, 1);
         localStorage.setItem('questions', JSON.stringify(this.questions));
 
       }
-      
+
     }
   }
 
